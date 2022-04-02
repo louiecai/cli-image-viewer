@@ -1,8 +1,6 @@
-import curses
 import os
 import sys
 
-import numpy as np
 from PIL import Image
 
 if os.name == 'nt':
@@ -13,7 +11,7 @@ if os.name == 'nt':
         _fields_ = [("size", ctypes.c_int), ("visible", ctypes.c_byte)]
 
 
-def dual_color_str(top_color: np.ndarray, bottom_color: np.ndarray, symbol: str = '▄') -> str:
+def dual_color_str(top_color: tuple, bottom_color: tuple, symbol: str = '▄') -> str:
     """
     Returns a dual color block that represents the top and bottom colors.
 
